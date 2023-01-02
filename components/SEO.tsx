@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog, Authors } from 'contentlayer/generated'
+
 interface CommonSEOProps {
   title: string
   description: string
@@ -87,12 +88,14 @@ export const TagSEO = ({ title, description }: PageSEOProps) => {
         twImage={twImageUrl}
       />
       <Head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title={`${description} - RSS feed`}
-          href={`${siteMetadata.siteUrl}${router.asPath}/feed.xml`}
-        />
+        <title>
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={`${description} - RSS feed`}
+            href={`${siteMetadata.siteUrl}${router.asPath}/feed.xml`}
+          />
+        </title>
       </Head>
     </>
   )
@@ -159,10 +162,10 @@ export const BlogSEO = ({
     publisher: {
       '@type': 'Organization',
       name: siteMetadata.author,
-      logo: {
-        '@type': 'ImageObject',
-        url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
-      },
+      // logo: {
+      //   '@type': 'ImageObject',
+      //   url: `${siteMetadata.siteUrl}${siteMetadata.siteLogo}`,
+      // },
     },
     description: summary,
   }
@@ -180,14 +183,16 @@ export const BlogSEO = ({
         canonicalUrl={canonicalUrl}
       />
       <Head>
-        {date && <meta property="article:published_time" content={publishedAt} />}
-        {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData, null, 2),
-          }}
-        />
+        <title>
+          {date && <meta property="article:published_time" content={publishedAt} />}
+          {lastmod && <meta property="article:modified_time" content={modifiedAt} />}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(structuredData, null, 2),
+            }}
+          />
+        </title>
       </Head>
     </>
   )
