@@ -1,6 +1,6 @@
-const projectsData = [
+const experienceData = [
   {
-    title: 'Dummy Project',
+    title: 'iREMS',
     description: `What if you could look up any information in the world? Webpages, images, videos
     and more. Google has many features to help you find exactly what you're looking
     for.`,
@@ -9,4 +9,4 @@ const projectsData = [
   },
 ]
 
-export default projectsData
+export default experienceData
