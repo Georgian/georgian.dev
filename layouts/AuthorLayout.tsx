@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar } = content
+  const { avatar } = content
 
   return (
     <>
@@ -29,9 +29,6 @@ export default function AuthorLayout({ children, content }: Props) {
               height={192}
               className="h-48 w-48 rounded-full"
             />
-{/*
-            <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
-*/}
           </div>
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{children}</div>
         </div>
