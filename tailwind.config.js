@@ -32,6 +32,10 @@ module.exports = {
       colors: {
         primary: colors.teal,
         gray: colors.neutral,
+        strava: {
+          500: '#fc4c02',
+          400: '#fc4c02',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {

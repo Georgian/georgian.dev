@@ -5,7 +5,7 @@ const siteMetadata = {
   title: 'Georgian Grec',
   author: 'Georgian Grec',
   headerTitle: 'GeorgianGrec',
-  description: 'Personal engineering blog',
+  description: 'Senior Software Engineer',
   language: 'en-us',
   theme: 'dark', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
@@ -16,6 +16,7 @@ const siteMetadata = {
   email: 'grec.georgian@gmail.com',
   github: 'https://github.com/Georgian',
   linkedin: 'https://www.linkedin.com/in/ggrec/',
+  strava: 'https://www.strava.com/athletes/3426471',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
@@ -25,7 +26,7 @@ const siteMetadata = {
     simpleAnalytics: false, // true or false
     umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     posthogProjectApiKey: '', // e.g. AhnJK8392ndPOav87as450xd
-    googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
+    googleAnalyticsId: 'G-LB52KEC564', // e.g. UA-000000-2 or G-XXXXXXX
   },
   comments: {
     // If you want to use an analytics provider you have to add it to the
