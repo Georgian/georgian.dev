@@ -6,6 +6,12 @@ class MyDocument extends Document {
     return (
       <Html lang={siteMetadata.language} className="scroll-smooth">
         <Head>
+          <script
+            async
+            defer
+            data-website-id={siteMetadata.umamiWebsiteId}
+            src="https://analytics.georgian.dev/umami.js" // Replace with your umami instance
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
