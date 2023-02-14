@@ -14,6 +14,7 @@ const siteMetadata = {
   image: '/static/images/avatar.jpg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'grec.georgian@gmail.com',
+  stackoverflow: 'https://stackoverflow.com/users/1774643/georgian',
   github: 'https://github.com/Georgian',
   linkedin: 'https://www.linkedin.com/in/ggrec/',
   strava: 'https://www.strava.com/athletes/3426471',

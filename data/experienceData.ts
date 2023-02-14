@@ -9,7 +9,7 @@ const experienceData = [
     title: 'DecisionLens',
     description: ``,
     imgSrc: '/static/images/decisionlens.svg',
-    href: 'https://carfax.com/',
+    href: 'https://decisionlens.com/',
   },
   {
     title: 'AppDynamics',

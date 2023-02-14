@@ -3,9 +3,9 @@ import siteMetadata from '@/data/siteMetadata'
 export default function SocialBar() {
   return (
     <>
-      <div className="flex flex-wrap gap-4 text-center">
+      <div className="flex flex-wrap gap-3 text-center">
         <a
-          className="focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-blue-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-blue-500/10 transition selection:bg-white/30 hover:bg-blue-500/80 hover:shadow-blue-500/5 focus:ring-blue-500/40 dark:bg-blue-400 dark:text-zinc-900 dark:shadow-blue-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-blue-400/80 dark:hover:shadow-blue-400/5 dark:focus:ring-blue-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
+          className="umami--click--linkedin-button focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-blue-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-blue-500/10 transition selection:bg-white/30 hover:bg-blue-500/80 hover:shadow-blue-500/5 focus:ring-blue-500/40 dark:bg-blue-400 dark:text-zinc-900 dark:shadow-blue-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-blue-400/80 dark:hover:shadow-blue-400/5 dark:focus:ring-blue-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
           href={siteMetadata.linkedin}
           rel="noreferrer"
           target="_blank"
@@ -18,10 +18,10 @@ export default function SocialBar() {
               fillRule="evenodd"
             />
           </svg>
-          <span className="hidden sm:inline">LinkedIn</span>
+          <span className="hidden md:inline">LinkedIn</span>
         </a>
         <a
-          className="focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-gray-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-gray-500/10 transition selection:bg-white/30 hover:bg-gray-500/80 hover:shadow-gray-500/5 focus:ring-gray-500/40 dark:bg-gray-400 dark:text-zinc-900 dark:shadow-gray-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-gray-400/80 dark:hover:shadow-gray-400/5 dark:focus:ring-gray-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
+          className="umami--click--github-button focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-gray-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-gray-500/10 transition selection:bg-white/30 hover:bg-gray-500/80 hover:shadow-gray-500/5 focus:ring-gray-500/40 dark:bg-gray-400 dark:text-zinc-900 dark:shadow-gray-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-gray-400/80 dark:hover:shadow-gray-400/5 dark:focus:ring-gray-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
           href={siteMetadata.github}
           rel="noreferrer"
           target="_blank"
@@ -34,10 +34,32 @@ export default function SocialBar() {
               fillRule="evenodd"
             />
           </svg>
-          <span className="hidden sm:inline">GitHub</span>
+          <span className="hidden md:inline">GitHub</span>
         </a>
         <a
-          className="focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-strava-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-strava-500/10 transition selection:bg-white/30 hover:bg-strava-500/80 hover:shadow-strava-500/5 focus:ring-strava-500/40 dark:bg-strava-400 dark:text-zinc-900 dark:shadow-strava-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-strava-400/80 dark:hover:shadow-strava-400/5 dark:focus:ring-strava-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
+          className="umami--click--stackoverflow-button focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-stackoverflow-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-stackoverflow-500/10 transition selection:bg-white/30 hover:bg-stackoverflow-500/80 hover:shadow-stackoverflow-500/5 focus:ring-stackoverflow-500/40 dark:bg-stackoverflow-400 dark:text-zinc-900 dark:shadow-stackoverflow-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-stackoverflow-400/80 dark:hover:shadow-stackoverflow-400/5 dark:focus:ring-stackoverflow-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
+          href={siteMetadata.stackoverflow}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            id="Layer_1"
+            x="0px"
+            y="0px"
+            width="24px"
+            height="24px"
+            viewBox="-135 22 32 38"
+            fill="currentColor"
+          >
+            <g>
+              <polygon points="-108.5,56.2 -108.5,46.3 -105.2,46.3 -105.2,59.5 -135,59.5 -135,46.3 -131.7,46.3 -131.7,56.2       " />
+              <path d="M-128,45.4l16.2,3.4l0.7-3.2l-16.2-3.4L-128,45.4z M-125.9,37.6l15,7l1.4-3l-15-7L-125.9,37.6z     M-121.7,30.2l12.7,10.6l2.1-2.5l-12.7-10.6L-121.7,30.2z M-113.5,22.4l-2.7,2l9.9,13.3l2.7-2L-113.5,22.4z M-128.4,52.9h16.6    v-3.3h-16.6V52.9z" />
+            </g>
+          </svg>
+          <span className="hidden md:inline">StackOverflow</span>
+        </a>
+        <a
+          className="umami--click--strava-button focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-strava-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-strava-500/10 transition selection:bg-white/30 hover:bg-strava-500/80 hover:shadow-strava-500/5 focus:ring-strava-500/40 dark:bg-strava-400 dark:text-zinc-900 dark:shadow-strava-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-strava-400/80 dark:hover:shadow-strava-400/5 dark:focus:ring-strava-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
           href={siteMetadata.strava}
         >
           <svg
@@ -56,10 +78,10 @@ export default function SocialBar() {
               <path clipRule="evenodd" d="M7.2 2.5l3.1 6.3H4zm0 3.8l1.2 2.5H5.9z" />
             </g>
           </svg>
-          <span className="hidden sm:inline">Strava</span>
+          <span className="hidden md:inline">Strava</span>
         </a>
         <a
-          className="focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-lime-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-lime-500/10 transition selection:bg-white/30 hover:bg-lime-500/80 hover:shadow-lime-500/5 focus:ring-lime-500/40 dark:bg-lime-400 dark:text-zinc-900 dark:shadow-lime-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-lime-400/80 dark:hover:shadow-lime-400/5 dark:focus:ring-lime-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
+          className="umami--click--email-button focusable flex flex-none cursor-pointer items-center justify-center gap-2 rounded-md bg-lime-500 py-2 px-2.5 font-medium text-white shadow-lg shadow-lime-500/10 transition selection:bg-white/30 hover:bg-lime-500/80 hover:shadow-lime-500/5 focus:ring-lime-500/40 dark:bg-lime-400 dark:text-zinc-900 dark:shadow-lime-400/10 dark:selection:bg-zinc-900/30 dark:hover:bg-lime-400/80 dark:hover:shadow-lime-400/5 dark:focus:ring-lime-400/40 sm:w-auto sm:px-3 sm:pl-2.5"
           href={`mailto:${siteMetadata.email}`}
         >
           <svg height="24" role="presentation" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +92,7 @@ export default function SocialBar() {
               fillRule="evenodd"
             />
           </svg>
-          <span className="hidden sm:inline">Email</span>
+          <span className="hidden md:inline">Email</span>
         </a>
       </div>
     </>

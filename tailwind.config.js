@@ -36,6 +36,10 @@ module.exports = {
           500: '#fc4c02',
           400: '#fc4c02',
         },
+        stackoverflow: {
+          500: '#F48024',
+          400: '#F48024',
+        },
       },
       typography: (theme) => ({
         DEFAULT: {

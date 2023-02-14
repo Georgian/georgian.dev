@@ -1,10 +1,11 @@
+import '@/css/tailwind.css'
+import '@/css/prism.css'
+import 'katex/dist/katex.css'
+
 import { Analytics } from '@/components/Analytics'
 import LayoutWrapper from '@/components/LayoutWrapper'
-import '@/css/prism.css'
-import '@/css/tailwind.css'
 
 import siteMetadata from '@/data/siteMetadata'
-import 'katex/dist/katex.css'
 // import '@/css/docsearch.css' // Uncomment if using algolia docsearch
 // import '@docsearch/css' // Uncomment if using algolia docsearch
 import { ThemeProvider } from 'next-themes'
