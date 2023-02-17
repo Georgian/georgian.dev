@@ -93,7 +93,7 @@ const experienceData = [
     description: `It ain't much, but it's honest work 😛`,
     imgSrc: '/static/favicons/favicon-32x32.png',
     href: 'https://georgian.dev/',
-    tags: ['NextJS', 'TypeScript', 'Railway', 'Umami'],
+    tags: ['NextJS', 'TypeScript', 'Vercel', 'Railway', 'Umami'],
   },
 ]
 

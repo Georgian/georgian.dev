@@ -13,7 +13,7 @@ export default function Home() {
           </h1>
         </div>
         <div className={`pt-5`}>
-          <h2 className="text-1xl md:text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14">
+          <h2 className="text-1xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-2xl md:leading-14">
             Software engineer & competitive cyclist.
           </h2>
           <SocialBar />
