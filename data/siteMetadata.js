@@ -2,13 +2,13 @@
 
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Georgian Grec',
+  title: 'Georgian Grec - Software engineer & cyclist',
   author: 'Georgian Grec',
-  headerTitle: 'GeorgianGrec',
-  description: 'Senior Software Engineer',
+  headerTitle: 'Georgian Grec',
+  description: 'Software Engineer & cyclist',
   language: 'en-us',
   theme: 'dark', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://georgian.dev',
   siteRepo: 'https://github.com/Georgian/georgian.dev',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.jpg',

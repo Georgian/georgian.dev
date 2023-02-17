@@ -22,6 +22,7 @@ export default function Experience() {
                 description={d.description}
                 imgSrc={d.imgSrc}
                 href={d.href}
+                tags={d.tags}
               />
             ))}
           </div>
