@@ -16,7 +16,8 @@ export default function FourZeroFour() {
             I'm glad you're curious but...
           </p>
           <p className="mb-8">
-            there's nothing here, yet. This site is still under construction, so something may show up at some point.
+            there's nothing here, yet. This site is still under construction, so something may show
+            up at some point.
           </p>
           <Link
             href="/"

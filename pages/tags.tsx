@@ -1,7 +1,7 @@
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
-import experienceData from "@/data/experienceData";
+import experienceData from '@/data/experienceData'
 import siteMetadata from '@/data/siteMetadata'
 import { kebabCase } from 'pliny/utils/kebabCase'
 import { getAllTags } from 'pliny/utils/contentlayer'
