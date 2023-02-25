@@ -34,7 +34,7 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
         <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="space-y-2 pt-16 md:space-y-5">
             <h2 className="text-1xl my-4 font-bold tracking-tight text-black dark:text-white md:text-3xl">
-              Recent Posts
+              Recent Notes
             </h2>
           </div>
           <div className="mb-6">
