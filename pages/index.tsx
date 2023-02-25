@@ -2,14 +2,14 @@ import BlogPostCard from '@/components/BlogPostCard'
 import { PageSEO } from '@/components/SEO'
 import SocialBar from '@/components/SocialBar'
 import siteMetadata from '@/data/siteMetadata'
-import { allBlogs, Blog } from 'contentlayer/generated'
+import { allNotes, Notes } from 'contentlayer/generated'
 import { InferGetStaticPropsType } from 'next'
 import { allCoreContent, sortedBlogPost } from 'pliny/utils/contentlayer'
 
 const MAX_DISPLAY = 5
 
 export const getStaticProps = async () => {
-  const sortedPosts = sortedBlogPost(allBlogs) as Blog[]
+  const sortedPosts = sortedBlogPost(allNotes) as Notes[]
   const posts = allCoreContent(sortedPosts)
 
   return { props: { posts } }

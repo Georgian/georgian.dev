@@ -6,10 +6,10 @@ import siteMetadata from '@/data/siteMetadata'
 import { kebabCase } from 'pliny/utils/kebabCase'
 import { getAllTags } from 'pliny/utils/contentlayer'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { allBlogs } from 'contentlayer/generated'
+import { allNotes } from 'contentlayer/generated'
 
 export const getStaticProps: GetStaticProps<{ tags: Record<string, number> }> = async () => {
-  const tags = await getAllTags(allBlogs)
+  const tags = await getAllTags(allNotes)
   const experienceTags = experienceData.flatMap((it) => it.tags)
   experienceTags.forEach(function (x) {
     tags[x] = (tags[x] || 0) + 1

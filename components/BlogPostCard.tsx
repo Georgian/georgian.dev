@@ -4,7 +4,7 @@ import { formatDate } from 'pliny/utils/formatDate'
 
 export default function BlogPostCard({ title, slug, date }) {
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/notes/${slug}`}>
       <div className="w-full transform border-b border-gray-200 py-3 transition-all hover:scale-[1.01] dark:border-gray-700">
         <div className="flex flex-col justify-between sm:flex-row sm:items-center">
           <div className="flex items-center">

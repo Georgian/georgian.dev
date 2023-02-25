@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import siteMetadata from '@/data/siteMetadata'
 import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog, Authors } from 'contentlayer/generated'
+import type { Notes, Authors } from 'contentlayer/generated'
 
 interface CommonSEOProps {
   title: string
@@ -101,7 +101,7 @@ export const TagSEO = ({ title, description }: PageSEOProps) => {
   )
 }
 
-interface BlogSeoProps extends CoreContent<Blog> {
+interface BlogSeoProps extends CoreContent<Notes> {
   authorDetails?: CoreContent<Authors>[]
   url: string
 }
