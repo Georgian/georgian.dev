@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Analytics
         umamiWebsiteId={siteMetadata.analytics.umamiWebsiteId}
-        umamiScriptSrc="https://analytics.georgian.dev/umami.js"
+        umamiScriptSrc="https://analytics.georgian.dev/script.js"
       />
       <LayoutWrapper>
         <SearchProvider searchConfig={siteMetadata.search}>
