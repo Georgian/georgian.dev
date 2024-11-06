@@ -15,9 +15,12 @@ import {remarkReadingTime} from './src/plugins/remark-reading-time';
 
 // Rehype plugins
 import rehypeExternalLinks from 'rehype-external-links';
+import vercelStatic from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
+  adapter: vercelStatic(),
   image: {
     domains: ['webmention.io'],
   },
