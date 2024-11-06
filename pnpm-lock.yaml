@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@astrojs/mdx':
         specifier: 3.1.4
-        version: 3.1.4(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4))
+        version: 3.1.4(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3))
       '@astrojs/rss':
         specifier: 4.0.7
         version: 4.0.7
@@ -19,13 +19,13 @@ importers:
         version: 3.1.6
       '@astrojs/tailwind':
         specifier: 5.1.0
-        version: 5.1.0(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)
+        version: 5.1.0(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3))(tailwindcss@3.4.10)
       astro:
         specifier: 4.14.3
-        version: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4)
+        version: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3)
       astro-expressive-code:
         specifier: ^0.35.6
-        version: 0.35.6(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4))
+        version: 0.35.6(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3))
       astro-icon:
         specifier: ^1.1.1
         version: 1.1.1
@@ -68,16 +68,13 @@ importers:
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.3
-        version: 0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
+        version: 0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.3)
       '@biomejs/biome':
         specifier: ^1.8.3
         version: 1.8.3
       '@iconify-json/mdi':
         specifier: ^1.1.68
         version: 1.1.68
-      '@pagefind/default-ui':
-        specifier: ^1.1.0
-        version: 1.1.0
       '@resvg/resvg-js':
         specifier: ^2.6.2
         version: 2.6.2
@@ -96,9 +93,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.41)
-      pagefind:
-        specifier: ^1.1.0
-        version: 1.1.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -118,8 +112,8 @@ importers:
         specifier: ^3.4.10
         version: 3.4.10
       typescript:
-        specifier: ^5.5.4
-        version: 5.5.4
+        specifier: ^5.6.3
+        version: 5.6.3
 
 packages:
 
@@ -674,34 +668,6 @@ packages:
 
   '@oslojs/encoding@0.4.1':
     resolution: {integrity: sha512-hkjo6MuIK/kQR5CrGNdAPZhS01ZCXuWDRJ187zh6qqF2+yMHZpD9fAYpX8q2bOO6Ryhl3XpCT6kUX76N8hhm4Q==}
-
-  '@pagefind/darwin-arm64@1.1.0':
-    resolution: {integrity: sha512-SLsXNLtSilGZjvqis8sX42fBWsWAVkcDh1oerxwqbac84HbiwxpxOC2jm8hRwcR0Z55HPZPWO77XeRix/8GwTg==}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@pagefind/darwin-x64@1.1.0':
-    resolution: {integrity: sha512-QjQSE/L5oS1C8N8GdljGaWtjCBMgMtfrPAoiCmINTu9Y9dp0ggAyXvF8K7Qg3VyIMYJ6v8vg2PN7Z3b+AaAqUA==}
-    cpu: [x64]
-    os: [darwin]
-
-  '@pagefind/default-ui@1.1.0':
-    resolution: {integrity: sha512-+XiAJAK++C64nQcD7s3Prdmd5S92lT05fwjOxm0L1jj80jbL+tmvcqkkFnPpoqhnicIPgcAX/Y5W0HRZnBt35w==}
-
-  '@pagefind/linux-arm64@1.1.0':
-    resolution: {integrity: sha512-8zjYCa2BtNEL7KnXtysPtBELCyv5DSQ4yHeK/nsEq6w4ToAMTBl0K06khqxdSGgjMSwwrxvLzq3so0LC5Q14dA==}
-    cpu: [arm64]
-    os: [linux]
-
-  '@pagefind/linux-x64@1.1.0':
-    resolution: {integrity: sha512-4lsg6VB7A6PWTwaP8oSmXV4O9H0IHX7AlwTDcfyT+YJo/sPXOVjqycD5cdBgqNLfUk8B9bkWcTDCRmJbHrKeCw==}
-    cpu: [x64]
-    os: [linux]
-
-  '@pagefind/windows-x64@1.1.0':
-    resolution: {integrity: sha512-OboCM76BcMKT9IoSfZuFhiqMRgTde8x4qDDvKulFmycgiJrlL5WnIqBHJLQxZq+o2KyZpoHF97iwsGAm8c32sQ==}
-    cpu: [x64]
-    os: [win32]
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -2226,10 +2192,6 @@ packages:
   package-manager-detector@0.1.2:
     resolution: {integrity: sha512-iePyefLTOm2gEzbaZKSW+eBMjg+UYsQvUKxmvGXAQ987K16efBg10MxIjZs08iyX+DY2/owKY9DIdu193kX33w==}
 
-  pagefind@1.1.0:
-    resolution: {integrity: sha512-1nmj0/vfYcMxNEQj0YDRp6bTVv9hI7HLdPhK/vBBYlrnwjATndQvHyicj5Y7pUHrpCFZpFnLVQXIF829tpFmaw==}
-    hasBin: true
-
   pako@0.2.9:
     resolution: {integrity: sha512-NUcwaKxUxWrZLpDG+z/xZaCgQITkA/Dv4V/T6bw7VON6l1Xz/VnrBqrYjZQ12TamKHzITTfOEIYUj48y2KXImA==}
 
@@ -2936,8 +2898,8 @@ packages:
   typescript-auto-import-cache@0.3.3:
     resolution: {integrity: sha512-ojEC7+Ci1ij9eE6hp8Jl9VUNnsEKzztktP5gtYNRMrTmfXVwA1PITYYAkpxCvvupdSYa/Re51B6KMcv1CTZEUA==}
 
-  typescript@5.5.4:
-    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3272,13 +3234,13 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@astrojs/check@0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)':
+  '@astrojs/check@0.9.3(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.3)':
     dependencies:
-      '@astrojs/language-server': 2.14.1(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)
+      '@astrojs/language-server': 2.14.1(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.3)
       chokidar: 3.6.0
       fast-glob: 3.3.2
       kleur: 4.1.5
-      typescript: 5.5.4
+      typescript: 5.6.3
       yargs: 17.7.2
     transitivePeerDependencies:
       - prettier
@@ -3290,12 +3252,12 @@ snapshots:
 
   '@astrojs/internal-helpers@0.4.1': {}
 
-  '@astrojs/language-server@2.14.1(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.5.4)':
+  '@astrojs/language-server@2.14.1(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.3)':
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/yaml2ts': 0.2.1
       '@jridgewell/sourcemap-codec': 1.5.0
-      '@volar/kit': 2.4.0(typescript@5.5.4)
+      '@volar/kit': 2.4.0(typescript@5.6.3)
       '@volar/language-core': 2.4.0
       '@volar/language-server': 2.4.0
       '@volar/language-service': 2.4.0
@@ -3340,12 +3302,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@3.1.4(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4))':
+  '@astrojs/mdx@3.1.4(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3))':
     dependencies:
       '@astrojs/markdown-remark': 5.2.0
       '@mdx-js/mdx': 3.0.1
       acorn: 8.12.1
-      astro: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4)
+      astro: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3)
       es-module-lexer: 1.5.4
       estree-util-visit: 2.0.0
       gray-matter: 4.0.3
@@ -3375,9 +3337,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/tailwind@5.1.0(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)':
+  '@astrojs/tailwind@5.1.0(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3))(tailwindcss@3.4.10)':
     dependencies:
-      astro: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4)
+      astro: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3)
       autoprefixer: 10.4.20(postcss@8.4.39)
       postcss: 8.4.39
       postcss-load-config: 4.0.2(postcss@8.4.39)
@@ -3872,23 +3834,6 @@ snapshots:
 
   '@oslojs/encoding@0.4.1': {}
 
-  '@pagefind/darwin-arm64@1.1.0':
-    optional: true
-
-  '@pagefind/darwin-x64@1.1.0':
-    optional: true
-
-  '@pagefind/default-ui@1.1.0': {}
-
-  '@pagefind/linux-arm64@1.1.0':
-    optional: true
-
-  '@pagefind/linux-x64@1.1.0':
-    optional: true
-
-  '@pagefind/windows-x64@1.1.0':
-    optional: true
-
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
@@ -4101,12 +4046,12 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@volar/kit@2.4.0(typescript@5.5.4)':
+  '@volar/kit@2.4.0(typescript@5.6.3)':
     dependencies:
       '@volar/language-service': 2.4.0
       '@volar/typescript': 2.4.0
       typesafe-path: 0.2.2
-      typescript: 5.5.4
+      typescript: 5.6.3
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.0.8
 
@@ -4205,9 +4150,9 @@ snapshots:
 
   astring@1.8.6: {}
 
-  astro-expressive-code@0.35.6(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4)):
+  astro-expressive-code@0.35.6(astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3)):
     dependencies:
-      astro: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4)
+      astro: 4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3)
       rehype-expressive-code: 0.35.6
 
   astro-icon@1.1.1:
@@ -4219,7 +4164,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.5.4):
+  astro@4.14.3(@types/node@22.4.2)(rollup@4.21.0)(typescript@5.6.3):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -4277,7 +4222,7 @@ snapshots:
       shiki: 1.14.1
       string-width: 7.2.0
       strip-ansi: 7.1.0
-      tsconfck: 3.1.1(typescript@5.5.4)
+      tsconfck: 3.1.1(typescript@5.6.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.2
       vite: 5.4.2(@types/node@22.4.2)
@@ -4287,7 +4232,7 @@ snapshots:
       yargs-parser: 21.1.1
       zod: 3.23.8
       zod-to-json-schema: 3.23.2(zod@3.23.8)
-      zod-to-ts: 1.2.0(typescript@5.5.4)(zod@3.23.8)
+      zod-to-ts: 1.2.0(typescript@5.6.3)(zod@3.23.8)
     optionalDependencies:
       sharp: 0.33.5
     transitivePeerDependencies:
@@ -5847,14 +5792,6 @@ snapshots:
 
   package-manager-detector@0.1.2: {}
 
-  pagefind@1.1.0:
-    optionalDependencies:
-      '@pagefind/darwin-arm64': 1.1.0
-      '@pagefind/darwin-x64': 1.1.0
-      '@pagefind/linux-arm64': 1.1.0
-      '@pagefind/linux-x64': 1.1.0
-      '@pagefind/windows-x64': 1.1.0
-
   pako@0.2.9: {}
 
   parse-css-color@0.2.1:
@@ -6617,9 +6554,9 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@3.1.1(typescript@5.5.4):
+  tsconfck@3.1.1(typescript@5.6.3):
     optionalDependencies:
-      typescript: 5.5.4
+      typescript: 5.6.3
 
   tslib@2.6.3:
     optional: true
@@ -6632,7 +6569,7 @@ snapshots:
     dependencies:
       semver: 7.6.3
 
-  typescript@5.5.4: {}
+  typescript@5.6.3: {}
 
   ufo@1.5.4: {}
 
@@ -6940,9 +6877,9 @@ snapshots:
     dependencies:
       zod: 3.23.8
 
-  zod-to-ts@1.2.0(typescript@5.5.4)(zod@3.23.8):
+  zod-to-ts@1.2.0(typescript@5.6.3)(zod@3.23.8):
     dependencies:
-      typescript: 5.5.4
+      typescript: 5.6.3
       zod: 3.23.8
 
   zod@3.23.8: {}
