@@ -1,98 +1,163 @@
 ---
-import SocialList from "@/components/SocialList.astro";
-import PostPreview from "@/components/blog/PostPreview.astro";
-import { getAllPosts, sortMDByDate } from "@/data/post";
-import PageLayout from "@/layouts/Base.astro";
+import {EXPERIENCE} from '../data/experience';
+import Experience from '../components/experience/index.astro';
+import PageLayout from '@/layouts/Base.astro';
+import {SOCIALS} from '../data/socials';
+import Component from '../components/Component.astro';
 
-const MAX_POSTS = 10;
-const allPosts = await getAllPosts();
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
-
-const cactusTech: { desc: string; href: string; title: string }[] = [
-	{
-		desc: "Build fast websites, faster.",
-		href: "https://astro.build",
-		title: "Astro",
-	},
-	{
-		desc: "Rapidly build modern websites without ever leaving your HTML.",
-		href: "https://tailwindcss.com",
-		title: "Tailwind CSS",
-	},
-	{
-		desc: "Simple and easy-to-use markup language.",
-		href: "https://www.markdownguide.org/",
-		title: "Markdown",
-	},
-	{
-		desc: "Markdown for the component era.",
-		href: "https://mdxjs.com/",
-		title: "MDX",
-	},
-	{
-		desc: "Generating png Open Graph images for blog posts.",
-		href: "https://github.com/vercel/satori",
-		title: "Satori",
-	},
-	{
-		desc: "A fully static search library.",
-		href: "https://pagefind.app/",
-		title: "Pagefind",
-	},
-	{
-		desc: "An easy to use Icon component for Astro.",
-		href: "https://github.com/natemoo-re/astro-icon#readme",
-		title: "Astro Icon",
-	},
-	{
-		desc: "Highly customisable source code & syntax highlighter",
-		href: "https://expressive-code.com/",
-		title: "Expressive Code",
-	},
-];
+const meta = {
+  description: 'I\'m a starter theme for Astro.build',
+  title: 'About',
+};
 ---
 
-<PageLayout meta={{ title: "Home" }}>
-	<section>
-		<h1 class="title mb-6">Hello World!</h1>
-		<p class="mb-4">
-			Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
-			If you want to know more about how you can customise me, add more posts, and make it your own,
-			click on the GitHub icon link below and it will take you to my repo.
-		</p>
-		<SocialList />
-	</section>
-	<section aria-label="Blog post list" class="mt-16">
-		<h2 class="title mb-4 text-xl">Posts</h2>
-		<ul class="space-y-4">
-			{
-				allPostsByDate.map((p) => (
-					<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-						{/* @ts-expect-error - issue with -> @astrojs/check@0.9.3 */}
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
-	<section class="mt-16">
-		<h2 class="title mb-4 text-xl">Technologies</h2>
-		<dl class="space-y-4">
-			{
-				cactusTech.map(({ desc, href, title }) => (
-					<div class="flex flex-col gap-2 sm:flex-row">
-						<dt>
-							<span class="flex">
-								<a class="cactus-link" href={href} rel="noreferrer" target="_blank">
-									{title}
-								</a>
-								:
-							</span>
-						</dt>
-						<dd>{desc}</dd>
-					</div>
-				))
-			}
-		</dl>
-	</section>
+<PageLayout meta={meta}>
+  <div class="hero relative z-10">
+    <div class="mx-auto max-w-screen-2xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div class="lg:flex lg:justify-between lg:gap-4">
+        <header
+          class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
+        >
+          <div
+            class="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-left"
+          >
+            <img
+              src="/avatar.webp"
+              alt="Georgian Grec"
+              class="aspect-square border-primary w-32 rounded-full border-2 object-cover"
+            />
+            <div>
+              <a href="/" class="block text-4xl font-bold tracking-tight lg:text-5xl">
+                <h1>Georgian Grec</h1>
+              </a>
+              <h2 class="mt-2 text-sm text-neutral-400 lg:text-lg">Experienced Software Engineer</h2>
+              <a
+                data-cursor
+                href="mailto:grec.georgian@gmail.com"
+                class="umami--click--email-button hover:border-opacity-0 border-opacity-50 group mt-4 inline-flex items-center gap-x-2 rounded-md border border-neutral-700 bg-neutral-400/10 p-2 px-3 py-2.5 text-sm font-semibold text-white shadow transition-all"
+              >
+                <span>Email me</span>
+                <sapn class="h-2 w-2 animate-pulse rounded-full bg-accent duration-1000"></sapn>
+              </a>
+            </div>
+          </div>
+
+          {
+            SOCIALS.length && (
+              <ul
+                class="mt-8 flex items-center justify-center lg:justify-normal gap-x-5"
+                aria-label="Social media"
+              >
+                {SOCIALS.map((social) => (
+                  <li class="text-xs p-2 rounded" data-ccursor>
+                    <a
+                      class="block hover:text-slate-200"
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={`${social.name} (opens in a new tab)`}
+                    >
+                      <span class="sr-only">{social.name}</span>
+                      {
+                        <Component component={social.icon}/>
+                      }
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+        </header>
+
+        <main id="content" class="pt-24 lg:w-1/2 lg:py-24">
+          <section
+            id="about"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="About me"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2 class="tracking-wides text-sm font-bold uppercase lg:sr-only">About</h2>
+            </div>
+            <div>
+              <div class="mb-4 space-y-4">
+                <p class="mb-4">
+                  The sport of cycling is not always about winning — it's often about managing disappointment. It has
+                  taught me resilience and consistency, values I apply in all areas of my life. <br/><br/>
+
+                  Hi, I'm Georgian, a software engineer with <b>over 10 years of experience</b>, specializing in
+                  <b>Java-based backend solutions</b>. Based in Cluj-Napoca, I'm passionate about building reliable
+                  software and thrive around critical-thinking teams. <br/><br/>
+
+                  In my spare time, I primarily ride and race bikes, lift weights, hike, ski tour, and explore various
+                  technical and non-technical topics to expand my knowledge. <br/><br/>
+
+                  As a dog owner, I'm also a strong advocate for animal welfare. <br/><br/>
+
+                  I'm always open to new challenges and collaborations, while staying committed to my ongoing projects.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section
+            id="experience"
+            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+            aria-label="Work experience"
+          >
+            <div
+              class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+            >
+              <h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">
+                Experience
+              </h2>
+            </div>
+            <div>
+              <ol class="group/list space-y-12">
+                {EXPERIENCE.map((experience) =>
+                  <Experience {...experience}/>)}
+              </ol>
+
+              <div class="mt-12">
+                <a
+                  data-ccursor
+                  class="group inline-flex items-center rounded p-2 px-3 font-semibold leading-tight text-neutral-200"
+                  aria-label="Request Full Résumé"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href="https://www.linkedin.com/in/ggrec"
+                >
+									<span>
+										<span
+                      class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
+                    >
+											Request Full
+										</span>
+										<span class="whitespace-nowrap">
+											<span
+                        class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
+                      >
+												Résumé
+											</span>
+											<svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
+                        aria-hidden="true"
+                      ><path
+                        fill-rule="evenodd"
+                        d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                        clip-rule="evenodd"></path></svg
+                      ></span
+                    ></span
+                  ></a
+                >
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
 </PageLayout>
