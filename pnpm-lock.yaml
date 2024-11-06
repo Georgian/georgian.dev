@@ -27,8 +27,8 @@ importers:
         specifier: ^4.16.10
         version: 4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3)
       astro-expressive-code:
-        specifier: ^0.35.6
-        version: 0.35.6(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3))
+        specifier: ^0.38.2
+        version: 0.38.2(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3))
       astro-icon:
         specifier: ^1.1.2
         version: 1.1.2
@@ -500,17 +500,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@expressive-code/core@0.35.6':
-    resolution: {integrity: sha512-xGqCkmfkgT7lr/rvmfnYdDSeTdCSp1otAHgoFS6wNEeO7wGDPpxdosVqYiIcQ8CfWUABh/pGqWG90q+MV3824A==}
+  '@expressive-code/core@0.38.2':
+    resolution: {integrity: sha512-kggEFS1hG7iSO95sd4be2zdScjYYZNUatGsCW0ADRnYA9VkXW4tENtQzLAKhK7yQgXtHMRFVv9sVax25lOfPkQ==}
 
-  '@expressive-code/plugin-frames@0.35.6':
-    resolution: {integrity: sha512-CqjSWjDJ3wabMJZfL9ZAzH5UAGKg7KWsf1TBzr4xvUbZvWoBtLA/TboBML0U1Ls8h/4TRCIvR4VEb8dv5+QG3w==}
+  '@expressive-code/plugin-frames@0.38.2':
+    resolution: {integrity: sha512-ChetouA/grYMjWx0ffT/uvZltHeDr7QY4e8NvIb2Nag7Hvf1vS1cjxdHUvp+TuTXk2WYxheMRfWPUa5gi6Ufpw==}
 
-  '@expressive-code/plugin-shiki@0.35.6':
-    resolution: {integrity: sha512-xm+hzi9BsmhkDUGuyAWIydOAWer7Cs9cj8FM0t4HXaQ+qCubprT6wJZSKUxuvFJIUsIOqk1xXFaJzGJGnWtKMg==}
+  '@expressive-code/plugin-shiki@0.38.2':
+    resolution: {integrity: sha512-B4NOGZxlqw0QhT+sUx8kNOJhgIiJLTDrLb8rUX1KSjfjsUKZ8uoObslYU2Jp3d7UUlp3SFvk8cKueKjj+fxpKA==}
 
-  '@expressive-code/plugin-text-markers@0.35.6':
-    resolution: {integrity: sha512-/k9eWVZSCs+uEKHR++22Uu6eIbHWEciVHbIuD8frT8DlqTtHYaaiwHPncO6KFWnGDz5i/gL7oyl6XmOi/E6GVg==}
+  '@expressive-code/plugin-text-markers@0.38.2':
+    resolution: {integrity: sha512-+TwyiKeSeZZvVTl5mkC0OSZZMzNaPHpbsbIgglt2/3dnQMKzJ3z7YklnoqrtiNTLdN1ReBi5HEGwMok5s3VboQ==}
 
   '@iconify-json/mdi@1.2.1':
     resolution: {integrity: sha512-dSkQU78gsZV6Yxnq78+LuX7jzeFC/5NAmz7O3rh558GimGFcwMVY/OtqRowIzjqJBmMmWZft7wkFV4TrwRXjlg==}
@@ -1080,10 +1080,10 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-expressive-code@0.35.6:
-    resolution: {integrity: sha512-1U4KrvFuodaCV3z4I1bIR16SdhQlPkolGsYTtiANxPZUVv/KitGSCTjzksrkPonn1XuwVqvnwmUUVzTLWngnBA==}
+  astro-expressive-code@0.38.2:
+    resolution: {integrity: sha512-mF/+gJTPz5w8gkDLb5bTPZiYXhkBOg7CW8VcV/XtCUj+oPtVqNvfUodK8yX5vTYpDgXbotQZu2gWM57rcX8rkA==}
     peerDependencies:
-      astro: ^4.0.0-beta || ^3.3.0
+      astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
 
   astro-icon@1.1.2:
     resolution: {integrity: sha512-2qAHBtZLYuFEIMP0Ck0edyLi5fQmJjwP2Qbv41f8L4KAJ2sra/dH7q5lCOn4q0DHVtS0w3tPG8UKQRits3UPcg==}
@@ -1519,8 +1519,8 @@ packages:
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
 
-  expressive-code@0.35.6:
-    resolution: {integrity: sha512-+mx+TPTbMqgo0mL92Xh9QgjW0kSQIsEivMgEcOnaqKqL7qCw8Vkqc5Rg/di7ZYw4aMUSr74VTc+w8GQWu05j1g==}
+  expressive-code@0.38.2:
+    resolution: {integrity: sha512-b5Tw2hOEijPiR2o6P++3OkEsnldNce1xai/KF2qXNXwEQVj09o50f7oKMpCrzFrwjDvn5EYds0UqQdM43VWASg==}
 
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -2714,8 +2714,8 @@ packages:
   regex@4.4.0:
     resolution: {integrity: sha512-uCUSuobNVeqUupowbdZub6ggI5/JZkYyJdDogddJr60L764oxC2pMZov1fQ3wM9bdyzUILDG+Sqx6NAKAz9rKQ==}
 
-  rehype-expressive-code@0.35.6:
-    resolution: {integrity: sha512-pPdE+pRcRw01kxMOwHQjuRxgwlblZt5+wAc3w2aPGgmcnn57wYjn07iKO7zaznDxYVxMYVvYlnL+R3vWFQS4Gw==}
+  rehype-expressive-code@0.38.2:
+    resolution: {integrity: sha512-XB9XebvlXPMgZEKsRNJBdVwYUTv/4NSFM0PMf2hf7PcQWSw7q6On0CBxdtum5DpIsL/fH3CWKJOtWMoXDzoNFw==}
 
   rehype-external-links@3.0.0:
     resolution: {integrity: sha512-yp+e5N9V3C6bwBeAC4n796kc86M4gJCdlVhiMTxIrJG5UHDMh+PJANf9heqORJbt1nrCbDwIlAZKjANIaVBbvw==}
@@ -3810,7 +3810,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@expressive-code/core@0.35.6':
+  '@expressive-code/core@0.38.2':
     dependencies:
       '@ctrl/tinycolor': 4.1.0
       hast-util-select: 6.0.3
@@ -3822,18 +3822,18 @@ snapshots:
       unist-util-visit: 5.0.0
       unist-util-visit-parents: 6.0.1
 
-  '@expressive-code/plugin-frames@0.35.6':
+  '@expressive-code/plugin-frames@0.38.2':
     dependencies:
-      '@expressive-code/core': 0.35.6
+      '@expressive-code/core': 0.38.2
 
-  '@expressive-code/plugin-shiki@0.35.6':
+  '@expressive-code/plugin-shiki@0.38.2':
     dependencies:
-      '@expressive-code/core': 0.35.6
+      '@expressive-code/core': 0.38.2
       shiki: 1.22.2
 
-  '@expressive-code/plugin-text-markers@0.35.6':
+  '@expressive-code/plugin-text-markers@0.38.2':
     dependencies:
-      '@expressive-code/core': 0.35.6
+      '@expressive-code/core': 0.38.2
 
   '@iconify-json/mdi@1.2.1':
     dependencies:
@@ -4417,10 +4417,10 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.35.6(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3)):
+  astro-expressive-code@0.38.2(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3)):
     dependencies:
       astro: 4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3)
-      rehype-expressive-code: 0.35.6
+      rehype-expressive-code: 0.38.2
 
   astro-icon@1.1.2:
     dependencies:
@@ -4976,12 +4976,12 @@ snapshots:
 
   eventemitter3@5.0.1: {}
 
-  expressive-code@0.35.6:
+  expressive-code@0.38.2:
     dependencies:
-      '@expressive-code/core': 0.35.6
-      '@expressive-code/plugin-frames': 0.35.6
-      '@expressive-code/plugin-shiki': 0.35.6
-      '@expressive-code/plugin-text-markers': 0.35.6
+      '@expressive-code/core': 0.38.2
+      '@expressive-code/plugin-frames': 0.38.2
+      '@expressive-code/plugin-shiki': 0.38.2
+      '@expressive-code/plugin-text-markers': 0.38.2
 
   extend-shallow@2.0.1:
     dependencies:
@@ -6473,9 +6473,9 @@ snapshots:
 
   regex@4.4.0: {}
 
-  rehype-expressive-code@0.35.6:
+  rehype-expressive-code@0.38.2:
     dependencies:
-      expressive-code: 0.35.6
+      expressive-code: 0.38.2
 
   rehype-external-links@3.0.0:
     dependencies:
