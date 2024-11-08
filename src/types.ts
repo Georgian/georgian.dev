@@ -13,6 +13,10 @@ export interface SiteConfig {
     link: string;
     pingback?: string;
   };
+  umamiAnalytics: {
+    websiteId: string;
+    scriptUrl: string;
+  }
 }
 
 export interface PaginationLink {

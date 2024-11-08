@@ -32,9 +32,6 @@ importers:
       astro-icon:
         specifier: ^1.1.2
         version: 1.1.2
-      astro-umami-analytics:
-        specifier: ^0.1.0
-        version: 0.1.0(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3))(prettier-plugin-astro@0.14.1)(prettier@3.3.3)
       cssnano:
         specifier: ^7.0.6
         version: 7.0.6(postcss@8.4.47)
@@ -1090,11 +1087,6 @@ packages:
 
   astro-icon@1.1.2:
     resolution: {integrity: sha512-2qAHBtZLYuFEIMP0Ck0edyLi5fQmJjwP2Qbv41f8L4KAJ2sra/dH7q5lCOn4q0DHVtS0w3tPG8UKQRits3UPcg==}
-
-  astro-umami-analytics@0.1.0:
-    resolution: {integrity: sha512-+coQreDWOv//CWHjuBlWaewF0Mk+73uuZc7AT60Mf+JlKbYcBEEScm+22Zh1GZynYzn8Hd+1Qs6NAENgrzneKg==}
-    peerDependencies:
-      astro: ^1.2.1 || ^2.0.0 || ^3.0.0-beta.0 || ^3.0.0 || ^4.0.0
 
   astro@4.16.10:
     resolution: {integrity: sha512-a+nB4bZE50NXHLzVXUHtx/lYct2Aa8kbqZnWNrWqkU97RuhBuWJ5H5/LQbKRnBWGvqChKfJBiMWJe53TY9ieYQ==}
@@ -4438,15 +4430,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - supports-color
-
-  astro-umami-analytics@0.1.0(astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3))(prettier-plugin-astro@0.14.1)(prettier@3.3.3):
-    dependencies:
-      '@astrojs/check': 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.3.3)(typescript@5.6.3)
-      astro: 4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3)
-      typescript: 5.6.3
-    transitivePeerDependencies:
-      - prettier
-      - prettier-plugin-astro
 
   astro@4.16.10(@types/node@22.9.0)(rollup@4.24.4)(typescript@5.6.3):
     dependencies:

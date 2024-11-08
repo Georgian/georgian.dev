@@ -23,6 +23,10 @@ export const siteConfig: SiteConfig = {
   sortPostsByUpdatedDate: false,
   // Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
   title: 'Georgian Grec | Software Engineer',
+  umamiAnalytics: {
+    websiteId: 'd1c90bc4-b740-414f-b51b-fb118ba498f6',
+    scriptUrl: 'https://analytics.georgian.dev/script.js'
+  }
 };
 
 // Used to generate links in both the Header & Footer.

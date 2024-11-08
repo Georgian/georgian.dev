@@ -1,0 +1,15 @@
+---
+import {siteConfig} from '../site.config';
+
+const isProduction = import.meta.env.PROD;
+---
+{ isProduction && siteConfig.umamiAnalytics && (
+    <>
+      <script async
+              defer
+              data-website-id={siteConfig.umamiAnalytics.websiteId}
+              src={siteConfig.umamiAnalytics.scriptUrl}
+      />
+    </>
+  )
+}
