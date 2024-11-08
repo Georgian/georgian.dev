@@ -19,6 +19,7 @@
 		"@astrojs/sitemap": "3.1.6",
 		"@astrojs/tailwind": "5.1.0",
 		"@astrojs/vercel": "^7.8.2",
+		"@yeskunall/astro-umami": "^0.0.2",
 		"astro": "^4.16.10",
 		"astro-expressive-code": "^0.35.6",
 		"astro-icon": "^1.1.2",

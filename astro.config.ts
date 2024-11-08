@@ -6,6 +6,7 @@ import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
 import {defineConfig} from 'astro/config';
 import {expressiveCodeOptions} from './src/site.config';
+import umami from '@yeskunall/astro-umami';
 
 // Remark plugins
 import remarkDirective from 'remark-directive'; /* Handle ::: directives as nodes */
@@ -33,6 +34,7 @@ export default defineConfig({
     }),
     sitemap(),
     mdx(),
+    umami({id: 'd1c90bc4-b740-414f-b51b-fb118ba498f6'})
   ],
   markdown: {
     rehypePlugins: [
