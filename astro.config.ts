@@ -1,17 +1,10 @@
 import fs from 'node:fs';
-import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
 import {defineConfig} from 'astro/config';
 import {expressiveCodeOptions} from './src/site.config';
-
-// Remark plugins
-import remarkDirective from 'remark-directive'; /* Handle ::: directives as nodes */
-import remarkUnwrapImages from 'remark-unwrap-images';
-import {remarkAdmonitions} from './src/plugins/remark-admonitions'; /* Add admonitions */
-import {remarkReadingTime} from './src/plugins/remark-reading-time';
 
 // Rehype plugins
 import rehypeExternalLinks from 'rehype-external-links';
@@ -31,8 +24,7 @@ export default defineConfig({
       applyBaseStyles: false,
       nesting: true,
     }),
-    sitemap(),
-    mdx()
+    sitemap()
   ],
   markdown: {
     rehypePlugins: [
@@ -44,7 +36,6 @@ export default defineConfig({
         },
       ],
     ],
-    remarkPlugins: [remarkUnwrapImages, remarkReadingTime, remarkDirective, remarkAdmonitions],
     remarkRehype: {
       footnoteLabelProperties: {
         className: [''],
