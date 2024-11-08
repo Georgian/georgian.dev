@@ -3,6 +3,7 @@ import BaseHead from "@/components/BaseHead.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { siteConfig } from "@/site-config";
 import type { SiteMeta } from "@/types";
+import { Umami } from "astro-umami-analytics";
 
 interface Props {
 	meta: SiteMeta;
@@ -16,6 +17,7 @@ const {
 <html class="scroll-smooth" lang={siteConfig.lang}>
 	<head>
     <title>{siteConfig.title}</title>
+    <Umami id="d1c90bc4-b740-414f-b51b-fb118ba498f6" />
     <BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
   </head>
 	<body class="mx-auto h-screen bg-bgColor px-4 font-mono text-sm font-normal text-textColor antialiased sm:px-8"
