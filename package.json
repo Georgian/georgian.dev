@@ -19,7 +19,7 @@
     "@astrojs/vercel": "^7.8.2",
     "astro": "^4.16.10",
     "astro-expressive-code": "^0.38.3",
-    "astro-icon": "^1.1.2",
+    "astro-icon": "^1.1.5",
     "cssnano": "^7.0.6",
     "hastscript": "^9.0.0",
     "mdast-util-directive": "^3.0.0",
