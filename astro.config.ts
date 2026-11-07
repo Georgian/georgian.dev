@@ -1,6 +1,8 @@
 import fs from 'node:fs';
+import {unified} from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@astrojs/tailwind';
+import vercel from '@astrojs/vercel';
+import tailwindcss from '@tailwindcss/vite';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
 import {defineConfig} from 'astro/config';
@@ -8,39 +10,38 @@ import {expressiveCodeOptions} from './src/site.config';
 
 // Rehype plugins
 import rehypeExternalLinks from 'rehype-external-links';
-import vercelStatic from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: vercelStatic(),
+  adapter: vercel(),
+  // Astro 7 defaults to JSX-style whitespace stripping, which would glue together inline text across line breaks
+  compressHTML: true,
   image: {
     domains: ['webmention.io'],
   },
   integrations: [
     expressiveCode(expressiveCodeOptions),
     icon(),
-    tailwind({
-      applyBaseStyles: false,
-      nesting: true,
-    }),
     sitemap()
   ],
   markdown: {
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          rel: ['nofollow, noreferrer'],
-          target: '_blank',
-        },
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          {
+            rel: ['nofollow, noreferrer'],
+            target: '_blank',
+          },
+        ],
       ],
-    ],
-    remarkRehype: {
-      footnoteLabelProperties: {
-        className: [''],
+      remarkRehype: {
+        footnoteLabelProperties: {
+          className: [''],
+        },
       },
-    },
+    }),
   },
   // https://docs.astro.build/en/guides/prefetch/
   prefetch: true,
@@ -49,7 +50,7 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ['@resvg/resvg-js'],
     },
-    plugins: [rawFonts(['.ttf', '.woff'])],
+    plugins: [tailwindcss(), rawFonts(['.ttf', '.woff'])],
   },
 });
 
