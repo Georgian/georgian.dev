@@ -1,27 +1,10 @@
+import typography from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
-import plugin from "tailwindcss/plugin";
+import plugin, { type PluginUtils } from "tailwindcss/plugin";
 
 export default {
-	content: [
-		"./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}",
-		"!./src/pages/og-image/[slug].png.ts",
-	],
-	corePlugins: {
-		// disable aspect ratio as per docs -> @tailwindcss/aspect-ratio
-		aspectRatio: false,
-		borderOpacity: false,
-		fontVariantNumeric: false,
-		ringOffsetColor: false,
-		ringOffsetWidth: false,
-		scrollSnapType: false,
-		textOpacity: false,
-		// disable some core plugins as they are included in the css, even when unused
-		touchAction: false,
-	},
 	plugins: [
-		require("@tailwindcss/typography"),
-		require("@tailwindcss/aspect-ratio"),
+		typography,
 		plugin(({ addComponents }) => {
 			addComponents({
 				".cactus-link": {
@@ -46,18 +29,10 @@ export default {
 				quote: "hsl(var(--theme-quote) / <alpha-value>)",
 				textColor: "hsl(var(--theme-text) / <alpha-value>)",
 			},
-			fontFamily: {
-				// Add any custom fonts here
-				sans: [...fontFamily.sans],
-				serif: [...fontFamily.serif],
-			},
 			transitionProperty: {
 				height: "height",
 			},
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-expect-error
-			// Remove above once tailwindcss exposes theme type
-			typography: (theme) => ({
+			typography: ({ theme }: PluginUtils) => ({
 				DEFAULT: {
 					css: {
 						a: {
