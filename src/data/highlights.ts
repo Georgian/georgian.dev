@@ -50,7 +50,7 @@ export const HIGHLIGHTS: HighlightColumn[] = [
 		entries: [
 			{
 				title: "LinkedIn",
-				description: "Everything before 2023.",
+				description: "The resume this page isn’t.",
 				url: "https://www.linkedin.com/in/ggrec",
 			},
 			{
