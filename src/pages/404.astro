@@ -1,15 +1,18 @@
 ---
-import PageLayout from '@/layouts/Base.astro';
+import PageLayout from "@/layouts/Base.astro";
 
 const meta = {
-  description: 'Oops! It looks like this page is lost in space!',
-  title: 'Oops! You found a missing page!',
+	description: "This page doesn’t exist.",
+	title: "Page not found",
 };
 ---
 
 <PageLayout meta={meta}>
-  <div class="flex justify-center items-center flex-col h-screen">
-    <h1 class="title mb-6">404 | Oops something went wrong</h1>
-    <p class="mb-8">Please use the navigation to find your way back</p>
-  </div>
+	<main class="mx-auto w-full max-w-[688px] grow px-5 pt-16 pb-24 md:px-6 md:pt-32">
+		<h1 class="reveal text-base leading-6 font-medium text-fg">Page not found</h1>
+		<!-- prettier-ignore -->
+		<p class="reveal mt-2" style="--stagger: 1">
+			Nothing lives at this address. <a class="link" href="/">Head back home</a>.
+		</p>
+	</main>
 </PageLayout>

@@ -5,7 +5,7 @@ import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
-import {defineConfig} from 'astro/config';
+import {defineConfig, fontProviders} from 'astro/config';
 import {expressiveCodeOptions} from './src/site.config';
 
 // Rehype plugins
@@ -20,6 +20,24 @@ export default defineConfig({
   image: {
     domains: ['webmention.io'],
   },
+  fonts: [
+    {
+      name: 'JetBrains Mono',
+      cssVariable: '--font-jetbrains-mono',
+      provider: fontProviders.fontsource(),
+      weights: [400, 500],
+      styles: ['normal'],
+      fallbacks: ['ui-monospace', 'monospace'],
+    },
+    {
+      name: 'JetBrains Mono',
+      cssVariable: '--font-jetbrains-mono',
+      provider: fontProviders.fontsource(),
+      weights: [400],
+      styles: ['italic'],
+      fallbacks: ['ui-monospace', 'monospace'],
+    },
+  ],
   integrations: [
     expressiveCode(expressiveCodeOptions),
     icon(),

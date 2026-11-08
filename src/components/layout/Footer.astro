@@ -1,13 +1,36 @@
 ---
-import { siteConfig } from "@/site-config";
+import { utcOffset } from "@/utils/utcOffset";
 
+const TIME_ZONE = "Europe/Bucharest";
 const year = new Date().getFullYear();
 ---
 
-<footer
-	class="mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 text-center align-top font-semibold text-gray-600 dark:text-gray-400 sm:flex-row sm:justify-between sm:text-xs"
->
-	<div class="me-0 sm:me-4">
-		&copy; {year} {siteConfig.author}
+<footer class="border-t border-line">
+	<div
+		class:list={[
+			"mx-auto flex max-w-[688px] flex-col items-start gap-y-1 px-5 py-3.5 md:px-6",
+			"sm:flex-row sm:items-center sm:justify-between sm:gap-x-4",
+			"text-xs leading-5 whitespace-nowrap text-dim sm:text-sm",
+		]}
+	>
+		<a
+			class="link umami--click--email-button text-dim hover:text-fg"
+			href="mailto:grec.georgian@gmail.com"
+		>
+			grec.georgian@gmail.com
+		</a>
+		<span>
+			{year} · Cluj-Napoca, Romania ·{" "}
+			<span data-utc-offset={TIME_ZONE}>{utcOffset(TIME_ZONE)}</span>
+		</span>
 	</div>
 </footer>
+
+<script>
+	import { utcOffset } from "@/utils/utcOffset";
+
+	// The build bakes in the offset at deploy time; recompute it so a daylight-saving switch shows without a redeploy.
+	const el = document.querySelector<HTMLElement>("[data-utc-offset]");
+	const offset = el?.dataset.utcOffset && utcOffset(el.dataset.utcOffset);
+	if (el && offset) el.textContent = offset;
+</script>

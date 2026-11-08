@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
     },
   },
   // Meta property used as the default description meta property
-  description: 'An opinionated starter theme for Astro',
+  description: 'Software engineer and cyclist in Cluj-Napoca, Romania. Backend by trade, mostly Java and GoLang.',
   // HTML lang property, found in src/layouts/Base.astro L:18
   lang: 'en-GB',
   // Meta property, found in src/components/BaseHead.astro L:42
@@ -22,7 +22,7 @@ export const siteConfig: SiteConfig = {
   // Option to sort posts by updatedDate if set to true (if property exists). Default (false) will sort by publishDate
   sortPostsByUpdatedDate: false,
   // Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-  title: 'Georgian Grec | Software Engineer',
+  title: 'Georgian Grec | Software Engineer & Cyclist',
   umamiAnalytics: {
     websiteId: 'd1c90bc4-b740-414f-b51b-fb118ba498f6',
     scriptUrl: 'https://analytics.georgian.dev/script.js'

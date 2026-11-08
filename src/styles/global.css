@@ -1,34 +1,169 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@config '../../tailwind.config.ts';
-
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+@theme inline {
+	--font-mono: var(--font-jetbrains-mono);
+	--color-canvas: var(--canvas);
+	--color-fg: var(--fg);
+	--color-body: var(--body);
+	--color-dim: var(--dim);
+	--color-line: var(--line);
+	--color-rule: var(--rule);
+	--color-accent: var(--accent);
 }
 
 @layer base {
-	:root,
-
 	:root {
-		--theme-bg: 210deg 6% 12%;
-		--theme-link: 330deg 49% 67%;
-		--theme-text: 220deg 3% 79%;
-		--theme-accent: 159deg 64% 45%;
-		--theme-accent-2: 0deg 0% 93%;
-		--theme-quote: 102deg 100% 86%;
+		--canvas: #ffffff;
+		--fg: #1f1f1f;
+		--body: #3a3a3a;
+		--dim: #646464;
+		--line: #e8e8e8;
+		--rule: #cfcfcf;
+		--accent: #29bc89;
+		color-scheme: light dark;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--canvas: #1a1a1a;
+			--fg: #ededed;
+			--body: #d6d6d6;
+			--dim: #a0a0a0;
+			--line: #2e2e2e;
+			--rule: #505050;
+		}
+	}
+
+	html {
+		@apply bg-canvas font-mono text-body antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	body {
+		font-size: 15px;
+		line-height: 1.75;
+	}
+
+	::selection {
+		background: color-mix(in srgb, var(--accent) 30%, transparent);
+	}
+
+	a:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+		border-radius: 3px;
+	}
+
+	em {
+		@apply text-fg italic;
+	}
+}
+
+@layer components {
+	.link {
+		@apply text-fg underline decoration-rule decoration-[1.5px] underline-offset-3;
+		transition: text-decoration-color 0.2s;
+
+		&:hover {
+			@apply decoration-fg;
+		}
+	}
+
+	/* Progressive blur pinned to the top edge; content scrolls underneath it */
+	.edge-blur {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		height: 6rem;
+		margin-bottom: -6rem;
+		pointer-events: none;
+		backdrop-filter: blur(5px);
+		mask-image: linear-gradient(to bottom, #000 25%, transparent);
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to bottom, var(--canvas), transparent);
+		}
+	}
+
+	/*
+	 * Fades whichever edge still has content beyond it, so a horizontal scroller reads as scrollable. The fades are
+	 * driven by the element's own scroll position; with no overflow the timeline is inactive and nothing is masked.
+	 * Browsers without scroll-driven animations get a static right-edge fade on narrow screens instead.
+	 */
+	.scroll-fade {
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			#000 var(--fade-start),
+			#000 calc(100% - var(--fade-end)),
+			transparent
+		);
+		/*
+		 * Longhands only: the minifier folds a shorthand plus animation-timeline into one `animation` declaration, which
+		 * browsers reject. Outside @supports, a timeline-less animation would finish instantly and stick on its last frame.
+		 */
+		@supports (animation-timeline: scroll()) {
+			animation-name: scroll-fade;
+			animation-timing-function: linear;
+			animation-fill-mode: both;
+			animation-timeline: scroll(self inline);
+		}
+
+		@supports not (animation-timeline: scroll()) {
+			@media (width < 48rem) {
+				--fade-end: 3rem;
+			}
+		}
+	}
+
+	.reveal {
+		animation: reveal 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+		animation-delay: calc(var(--stagger, 0) * 120ms);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.reveal {
+			animation: none;
+		}
+	}
+}
+
+@property --fade-start {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 0px;
+}
+
+@property --fade-end {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 0px;
+}
+
+@keyframes scroll-fade {
+	0% {
+		--fade-start: 0px;
+		--fade-end: 3rem;
+	}
+	15% {
+		--fade-start: 3rem;
+	}
+	85% {
+		--fade-end: 3rem;
+	}
+	100% {
+		--fade-start: 3rem;
+		--fade-end: 0px;
+	}
+}
+
+@keyframes reveal {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+		filter: blur(2px);
 	}
 }
