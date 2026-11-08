@@ -25,8 +25,8 @@ export const siteConfig: SiteConfig = {
   // Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
   title: 'Georgian Grec | Software Engineer & Cyclist',
   umamiAnalytics: {
-    websiteId: 'd1c90bc4-b740-414f-b51b-fb118ba498f6',
-    scriptUrl: 'https://analytics.georgian.dev/script.js'
+    websiteId: '2a62c370-d49b-4bb4-aa28-e69a9c34f0cb',
+    scriptUrl: 'https://cloud.umami.is/script.js'
   }
 };
 
