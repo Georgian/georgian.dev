@@ -1,163 +1,156 @@
 ---
-import {EXPERIENCE} from '../data/experience';
-import Experience from '../components/experience/index.astro';
-import PageLayout from '@/layouts/Base.astro';
-import {SOCIALS} from '../data/socials';
-import Component from '../components/Component.astro';
+import ArrowLink from "@/components/ArrowLink.astro";
+import { HIGHLIGHTS } from "@/data/highlights";
+import PageLayout from "@/layouts/Base.astro";
+import { siteConfig } from "@/site-config";
+import { spellOut, yearsSince } from "@/utils/yearsSince";
 
-const meta = {
-  description: 'I\'m a starter theme for Astro.build',
-  title: 'About',
-};
+const meta = { title: siteConfig.title };
+
+const ENGINEERING_SINCE = "2012-07";
+const RACING_SINCE = "2016-07";
 ---
 
 <PageLayout meta={meta}>
-  <div class="hero relative z-10">
-    <div class="mx-auto max-w-(--breakpoint-2xl) px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-      <div class="lg:flex lg:justify-between lg:gap-4">
-        <header
-          class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24"
-        >
-          <div
-            class="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-left"
-          >
-            <img
-              src="/avatar.webp"
-              alt="Georgian Grec"
-              class="aspect-square border-primary w-32 rounded-full border-2 object-cover"
-            />
-            <div>
-              <a href="/" class="block text-4xl font-bold tracking-tight lg:text-5xl">
-                <h1>Georgian Grec</h1>
-              </a>
-              <h2 class="mt-2 text-sm text-neutral-400 lg:text-lg">Experienced Software Engineer</h2>
-              <a
-                data-cursor
-                href="mailto:grec.georgian@gmail.com"
-                class="umami--click--email-button hover:border-opacity-0 border-opacity-50 group mt-4 inline-flex items-center gap-x-2 rounded-md border border-neutral-700 bg-neutral-400/10 p-2 px-3 py-2.5 text-sm font-semibold text-white shadow-sm transition-all"
-              >
-                <span>Email me</span>
-                <sapn class="h-2 w-2 animate-pulse rounded-full bg-accent duration-1000"></sapn>
-              </a>
-            </div>
-          </div>
+	<main class="mx-auto w-full max-w-[688px] grow px-5 pt-16 pb-24 md:px-6 md:pt-32 md:pb-32">
+		<header class="reveal mb-8">
+			<h1 class="text-base leading-[22px] font-medium text-fg">
+				<a href="/">Georgian Grec</a>
+			</h1>
+		</header>
 
-          {
-            SOCIALS.length && (
-              <ul
-                class="mt-8 flex items-center justify-center lg:justify-normal gap-x-5"
-                aria-label="Social media"
-              >
-                {SOCIALS.map((social) => (
-                  <li class="text-xs p-2 rounded-sm" data-ccursor>
-                    <a
-                      class="block hover:text-slate-200"
-                      href={social.url}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      aria-label={`${social.name} (opens in a new tab)`}
-                    >
-                      <span class="sr-only">{social.name}</span>
-                      {
-                        <Component component={social.icon}/>
-                      }
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )
-          }
-        </header>
+		<div class="reveal space-y-6" style="--stagger: 1">
+			<p>I have a lot of hobbies. Some of them just happen to pay better.</p>
+			<p>
+				{spellOut(yearsSince(ENGINEERING_SINCE))} years building software.
+				{spellOut(yearsSince(RACING_SINCE))} years racing bikes, the last few coaching riders too.
+				Neither has become boring.
+			</p>
+			<p>I work best with people who question assumptions, including mine.</p>
+		</div>
 
-        <main id="content" class="pt-12 lg:w-1/2 lg:pt-24">
-          <section
-            id="about"
-            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-            aria-label="About me"
-          >
-            <div
-              class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-            >
-              <h2 class="tracking-wides text-sm font-bold uppercase lg:sr-only">About</h2>
-            </div>
-            <div>
-              <div class="mb-4 space-y-4">
-                <p class="mb-4">
-                  The sport of cycling is not always about winning — it's often about managing disappointment. It has
-                  taught me resilience and consistency, values I apply in all areas of my life. <br/><br/>
+		<section aria-labelledby="paid" class="reveal" style="--stagger: 2">
+			<h2 id="paid" class="mt-18 mb-7 text-base leading-6 font-medium text-fg">
+				Paid
+			</h2>
+			<div class="space-y-6">
+				<p>
+					Backend by trade, full-stack when needed. Mostly Java and GoLang, occasionally other JVM
+					languages. I've worked across finance, real estate and procurement, leading small teams
+					along the way.
+				</p>
+				<p>I care more about the problem than the industry.</p>
+			</div>
+		</section>
 
-                  Hi, I'm Georgian, a software engineer with <b>over 10 years of experience</b>, specializing in
-                  <b>Java-based backend solutions</b>. Based in Cluj-Napoca, I'm passionate about building reliable
-                  software and thrive around critical-thinking teams. <br/><br/>
+		<div class="reveal mt-16" style="--stagger: 3">
+			<div
+				data-scroller
+				class:list={[
+					"scroll-fade -mx-5 flex snap-x snap-mandatory scroll-px-5 gap-8 overflow-x-auto px-5 md:mx-0 md:px-0",
+					"[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+				]}
+			>
+				{HIGHLIGHTS.map((column) => (
+					<section class="w-60 shrink-0 snap-start md:w-48" aria-label={column.label}>
+						<h2 class="mb-3 text-sm leading-5 text-dim">{column.label}</h2>
+						<ul class="flex flex-col gap-6">
+							{column.entries.map((entry) => (
+								<li class="min-h-19">
+									{entry.url ? (
+										<ArrowLink href={entry.url}>{entry.title}</ArrowLink>
+									) : (
+										<span class="font-medium text-fg">{entry.title}</span>
+									)}
+									<p class="leading-6 text-dim">{entry.description}</p>
+								</li>
+							))}
+						</ul>
+					</section>
+				))}
+			</div>
+			<div
+				data-scroll-track
+				class:list={[
+					"mt-4 h-0.5 rounded-full bg-line opacity-0 transition-opacity duration-300 md:hidden",
+					"data-scrolling:opacity-100 data-scrolling:duration-100 motion-reduce:transition-none",
+				]}
+				aria-hidden="true"
+			>
+				<div class="h-full w-1/2 rounded-full bg-dim"></div>
+			</div>
+		</div>
 
-                  In my spare time, I primarily ride and race bikes, lift weights, hike, ski tour, and explore various
-                  technical and non-technical topics to expand my knowledge. <br/><br/>
-
-                  As a dog owner, I'm also a strong advocate for animal welfare. <br/><br/>
-
-                  I'm always open to new challenges and collaborations, while staying committed to my ongoing projects.
-                </p>
-              </div>
-            </div>
-          </section>
-          <section
-            id="experience"
-            class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-            aria-label="Work experience"
-          >
-            <div
-              class="sticky top-0 z-20 -mx-6 mb-4 w-screen px-6 py-3 backdrop-blur-lg md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
-            >
-              <h2 class="text-sm font-bold uppercase tracking-widest text-neutral-200 lg:sr-only">
-                Experience
-              </h2>
-            </div>
-            <div>
-              <ol class="group/list space-y-12">
-                {EXPERIENCE.map((experience) =>
-                  <Experience {...experience}/>)}
-              </ol>
-
-              <div class="mt-12">
-                <a
-                  data-ccursor
-                  class="group inline-flex items-center rounded-sm p-2 px-3 font-semibold leading-tight text-neutral-200"
-                  aria-label="Request Full Résumé"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="https://www.linkedin.com/in/ggrec"
-                >
-									<span>
-										<span
-                      class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-                    >
-											Request Full
-										</span>
-										<span class="whitespace-nowrap">
-											<span
-                        class="border-b border-transparent pb-px transition group-hover:border-neutral-300 motion-reduce:transition-none"
-                      >
-												Résumé
-											</span>
-											<svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        class="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none"
-                        aria-hidden="true"
-                      ><path
-                        fill-rule="evenodd"
-                        d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
-                        clip-rule="evenodd"></path></svg
-                      ></span
-                    ></span
-                  ></a
-                >
-              </div>
-            </div>
-          </section>
-        </main>
-      </div>
-    </div>
-  </div>
+		<section aria-labelledby="outside" class="reveal" style="--stagger: 4">
+			<h2 id="outside" class="mt-14 mb-7 text-base leading-6 font-medium text-fg">
+				Outside
+			</h2>
+			<div class="space-y-6">
+				<p>
+					I ride MTB, road, gravel, cyclocross. Racing when it counts. Otherwise heading for
+					specialty coffee and a good pastry.
+				</p>
+				<p>
+					Strength training year-round. Hiking, ski touring and riding motorcycles in questionable
+					weather. Photography when travelling, technical books when staying put.
+				</p>
+				<p>One dog.</p>
+			</div>
+		</section>
+	</main>
 </PageLayout>
+
+<script>
+	const scroller = document.querySelector<HTMLElement>("[data-scroller]");
+	const track = document.querySelector<HTMLElement>("[data-scroll-track]");
+	const thumb = track?.firstElementChild as HTMLElement | null;
+
+	if (scroller && track && thumb) {
+		// Thumb width is the visible fraction of the strip; translating by scrollLeft / clientWidth of its own width
+		// lands its right edge exactly on the track's end at maximum scroll.
+		const update = () => {
+			const { scrollLeft, scrollWidth, clientWidth } = scroller;
+			track.hidden = scrollWidth <= clientWidth;
+			thumb.style.width = `${(clientWidth / scrollWidth) * 100}%`;
+			thumb.style.transform = `translateX(${(scrollLeft / clientWidth) * 100}%)`;
+		};
+		let idle: ReturnType<typeof setTimeout> | undefined;
+		const showBar = (ms: number) => {
+			track.toggleAttribute("data-scrolling", true);
+			clearTimeout(idle);
+			idle = setTimeout(() => track.removeAttribute("data-scrolling"), ms);
+		};
+		scroller.addEventListener(
+			"scroll",
+			() => {
+				update();
+				showBar(800);
+			},
+			{ passive: true },
+		);
+		new ResizeObserver(update).observe(scroller);
+
+		// The first time the strip comes into view, nudge the columns left and back while flashing the bar, so it reads
+		// as scrollable before anyone tries. A transform rather than a real scroll, which snapping would cancel out.
+		// The delay lets the page's fade-in finish first when the strip is already in view on load.
+		const hint = () => {
+			if (scroller.scrollWidth <= scroller.clientWidth || scroller.scrollLeft > 0) return;
+			showBar(1600);
+			if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+			for (const column of scroller.children) {
+				column.animate(
+					[{ transform: "none" }, { transform: "translateX(-56px)" }, { transform: "none" }],
+					{ duration: 1100, easing: "cubic-bezier(0.45, 0, 0.25, 1)" },
+				);
+			}
+		};
+		new IntersectionObserver(
+			(entries, observer) => {
+				if (!entries.some((entry) => entry.isIntersecting)) return;
+				observer.disconnect();
+				setTimeout(hint, 900);
+			},
+			{ threshold: 0.6 },
+		).observe(scroller);
+	}
+</script>

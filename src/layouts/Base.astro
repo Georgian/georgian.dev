@@ -3,7 +3,7 @@ import BaseHead from "@/components/BaseHead.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { siteConfig } from "@/site-config";
 import type { SiteMeta } from "@/types";
-import Analytics from '../components/UmamiAnalytics.astro';
+import Analytics from "../components/UmamiAnalytics.astro";
 
 interface Props {
 	meta: SiteMeta;
@@ -14,23 +14,14 @@ const {
 } = Astro.props;
 ---
 
-<html class="scroll-smooth" lang={siteConfig.lang}>
+<html lang={siteConfig.lang}>
 	<head>
-    <title>{siteConfig.title}</title>
-    <Analytics />
-    <BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
-  </head>
-	<body class="mx-auto h-screen bg-bgColor px-4 font-mono text-sm font-normal text-textColor antialiased sm:px-8"
-  >
-    <!-- <Header /> -->
-    <div class="lg:max-h-screen">
-      <!-- Main content area with grow behavior -->
-      <main id="main" class="grow">
-        <slot />
-      </main>
-
-      <!-- Footer always positioned at the bottom -->
-      <Footer class="mt-auto" />
-    </div>
-  </body>
+		<Analytics />
+		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+	</head>
+	<body class="flex min-h-dvh flex-col">
+		<div class="edge-blur" aria-hidden="true"></div>
+		<slot />
+		<Footer />
+	</body>
 </html>

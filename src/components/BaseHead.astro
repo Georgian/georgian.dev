@@ -1,9 +1,13 @@
 ---
+import { Font } from "astro:assets";
 import { siteConfig } from "@/site-config";
+import type { SiteMeta } from "@/types";
 import "../styles/global.css";
 
-const siteTitle = 'Georgian Grec | Software Engineer';
-const description = 'Senior software engineer & competitive cyclist';
+type Props = SiteMeta;
+
+const { title, description = siteConfig.description } = Astro.props;
+const siteTitle = title === siteConfig.title ? title : `${title} | ${siteConfig.author}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url).href;
 ---
@@ -13,10 +17,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta content="IE=edge" http-equiv="X-UA-Compatible" />
 <title>{siteTitle}</title>
 
+<Font cssVariable="--font-jetbrains-mono" preload={[{ weight: 400, style: "normal" }]} />
+
 {/* Icons / Favicon */}
-<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
-<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png"/>
+<link rel="icon" href="/favicons/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
 <link href="/manifest.webmanifest" rel="manifest" />
 <link href={canonicalURL} rel="canonical" />
 
@@ -26,7 +32,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta content={siteConfig.author} name="author" />
 
 {/* Theme Colour */}
-<meta content="" name="theme-color" />
+<meta content="#ffffff" name="theme-color" media="(prefers-color-scheme: light)" />
+<meta content="#1a1a1a" name="theme-color" media="(prefers-color-scheme: dark)" />
 
 {/* Open Graph / Facebook */}
 <meta content={siteTitle} property="og:title" />
@@ -35,8 +42,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta content={siteConfig.title} property="og:site_name" />
 <meta content={siteConfig.ogLocale} property="og:locale" />
 <!-- <meta content={socialImageURL} property="og:image" /> -->
-<meta content="1200" property="og:image:width" />
-<meta content="630" property="og:image:height" />
 
 {/* Twitter */}
 <meta content="summary_large_image" property="twitter:card" />
@@ -45,15 +50,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- <meta content={socialImageURL} property="twitter:image" /> -->
 
 {/* Webmentions */}
-{
-	siteConfig.webmentions && (
-		<>
-			<link href={siteConfig.webmentions.link} rel="webmention" />
-			{siteConfig.webmentions.pingback && (
-				<link href={siteConfig.webmentions.pingback} rel="pingback" />
-			)}
-		</>
-	)
-}
+{siteConfig.webmentions && (
+	<>
+		<link href={siteConfig.webmentions.link} rel="webmention" />
+		{siteConfig.webmentions.pingback && (
+			<link href={siteConfig.webmentions.pingback} rel="pingback" />
+		)}
+	</>
+)}
 
 <meta content={Astro.generator} name="generator" />
