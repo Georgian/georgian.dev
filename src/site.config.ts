@@ -14,7 +14,8 @@ export const siteConfig: SiteConfig = {
     },
   },
   // Meta property used as the default description meta property
-  description: 'Software engineer and cyclist in Cluj-Napoca, Romania. Backend by trade, mostly Java and GoLang.',
+  description:
+    'Software engineer in Cluj-Napoca. Mostly Java, fourteen years. Races bikes, coaches riders. Still not bored.',
   // HTML lang property, found in src/layouts/Base.astro L:18
   lang: 'en-GB',
   // Meta property, found in src/components/BaseHead.astro L:42
