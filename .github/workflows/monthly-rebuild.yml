@@ -1,7 +1,7 @@
 name: monthly rebuild
 
 # Dates are baked into the HTML at build time (years of experience, footer copyright year), so the site is redeployed
-# on the 1st of every month to pick them up. Vercel only builds on push, so this calls a Vercel deploy hook instead.
+# on the 1st of every month to pick them up. Workers Builds only builds on push, so this calls its deploy hook instead.
 on:
   schedule:
     - cron: "0 3 1 * *" # 03:00 UTC on the 1st
@@ -11,16 +11,16 @@ permissions: {}
 
 jobs:
   rebuild:
-    name: Trigger Vercel deploy
+    name: Trigger Cloudflare deploy
     runs-on: ubuntu-latest
 
     steps:
       - name: Call deploy hook
         env:
-          DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+          DEPLOY_HOOK_URL: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}
         run: |
           if [ -z "$DEPLOY_HOOK_URL" ]; then
-            echo "::error::The VERCEL_DEPLOY_HOOK_URL repository secret is not set"
+            echo "::error::The CLOUDFLARE_DEPLOY_HOOK_URL repository secret is not set"
             exit 1
           fi
           curl --fail --silent --show-error --request POST "$DEPLOY_HOOK_URL"

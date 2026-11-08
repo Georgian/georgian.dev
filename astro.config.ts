@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import {unified} from '@astrojs/markdown-remark';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
 import tailwindcss from '@tailwindcss/vite';
 import expressiveCode from 'astro-expressive-code';
 import icon from 'astro-icon';
@@ -14,7 +13,6 @@ import rehypeExternalLinks from 'rehype-external-links';
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: vercel(),
   // Astro 7 defaults to JSX-style whitespace stripping, which would glue together inline text across line breaks
   compressHTML: true,
   image: {
